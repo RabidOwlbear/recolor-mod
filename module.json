@@ -1,0 +1,27 @@
+{
+  "name": "recolor-mod",
+  "title": "Recolor Mod",
+  "description": "Recolor your world.",
+  "author": "JS",
+  "version": "0.0.1",
+  "minimumCoreVersion": "8",
+  "systems": ["ose"],
+  "compatibleCoreVersion": "9",
+  "esmodules": ["./scripts/init.js"],
+  "styles": ["./styles/main.css"],
+  "packs": [
+    {
+      "name": "recolor-mod",
+      "label": "Recolor Mod Macros",
+      "path": "packs/macros.db",
+      "entity": "Macro",
+      "module": "recolor-mod"
+    }
+  ],
+  "dependencies": [],
+  "languages": [],
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "readme": "README.md"
+}

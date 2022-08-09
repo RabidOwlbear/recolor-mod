@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+}
+:root {
+  --main-color: '';
+  --bright-color: '';
+  --dark-color: '';
+  --darkAlt-color: '';
+  --glow-color: '';
+  --sidebar-color: '';
+  --pause-color: '';
+  --header-color: '';
+  --flicker: ;
+  --pause-glow: ;
+  --font-family: ;
+  --sidebar-color:rgba(46, 0, 51, 0.718);
+  --color-header-color: ;
+  
+}
+:root {
+
+  scrollbar-color:  var(-sidebar-color) #111;
+
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--sidebar-color);
+}
+#sidebar-tabs>.item.active {
+  border: 1px solid var(--color-shadow-primary) !important;
+  box-shadow: 0 0 6px inset var(--color-shadow-highlight) !important;
+}
+
+.tabs .item.active {
+  text-shadow: 0 0 10px var(--color-shadow-primary) !important;
+}
+
+#sidebar {
+  background-color: var(--sidebar-color);
+  /* background-image: url() !important; */
+}
+
+/* color settings window */
+
+.theme-name button{
+  border: none;
+  height: 26px;
+  width: 26px;
+}
+
+#colorSettings .footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#colorSettings .footer .grid-item{
+  margin-bottom: .3em;
+}
+#colorSettings #submit-btn{
+  grid-column: 1 / span 2;
+}
+#colorSettings .theme-select{
+  display: flex;
+  flex-direction: column;
+}
+.theme-name-input-cont {
+  display: flex;
+}
+
+#colorSettings form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#color-grid.grid-container {
+  display: grid;
+  grid-template-columns: 1fr  1fr  1fr;
+}
+#color-grid label{
+  font-size: small;
+}
+#color-grid .grid-item{
+  margin-bottom: .3em;
+}
+.window-header {
+  background-color: var(--color-header-color);
+}
+
+
+@keyframes flicker {
+
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+      text-shadow:
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 13px #fff,
+          0 0 16px var(--pause-color),
+          0 0 18px var(--pause-color),
+          0 0 20px var(--pause-color),
+          0 0 35px var(--pause-color),
+          0 0 40px var(--pause-color);
+  }
+
+  20%,
+  24%,
+  55% {
+      text-shadow: none;
+  }
+}

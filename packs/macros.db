@@ -1,0 +1,1 @@
+{"name":"Reset themes to default","type":"script","author":"OE7OfUa8j849l7hs","img":"icons/magic/symbols/runes-carved-stone-yellow.webp","scope":"global","command":"rclmod.resetThemes()","folder":null,"sort":0,"permission":{"default":0,"OE7OfUa8j849l7hs":3},"flags":{"core":{"sourceId":"Macro.3x6EPhJMPsjHgRSB"}},"_id":"GSOVqFqSnsvSsYfg"}
