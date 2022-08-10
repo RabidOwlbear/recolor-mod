@@ -2,7 +2,7 @@
   "name": "recolor-mod",
   "title": "Recolor Mod",
   "description": "Recolor your world.",
-  "author": "JS",
+  "author": "Rabid Owlbear",
   "version": "0.0.1",
   "minimumCoreVersion": "8",
   "systems": ["ose"],
@@ -20,8 +20,8 @@
   ],
   "dependencies": [],
   "languages": [],
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/RabidOwlbear/recolor-mod",
+  "manifest": "https://raw.githubusercontent.com/RabidOwlbear/recolor-mod/main/module.json",
+  "download": "https://github.com/RabidOwlbear/recolor-mod/archive/refs/heads/main.zip",
   "readme": "README.md"
 }
