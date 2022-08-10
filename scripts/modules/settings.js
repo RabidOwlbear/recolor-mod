@@ -5,7 +5,7 @@ export const registerSettings = async function () {
   await game.settings.register(rclmod.modName, 'recolor', {
     name: 'Recolor',
     hint: 'Recolor Foundry',
-    scope: 'world',
+    scope: 'client',
     type: Boolean,
     default: true,
     config: true,
@@ -19,10 +19,9 @@ export const registerSettings = async function () {
   
 };
 export const registerThemes = async (themes, activeTheme)=>{
-  console.log('themes<------------------------------',themes)
   await game.settings.register(rclmod.modName, 'themes', {
     name: 'recolor-themes',
-    scope:'world',
+    scope:'client',
     type: Array,
     default: themes,
     config: false,
@@ -30,7 +29,7 @@ export const registerThemes = async (themes, activeTheme)=>{
 
   await game.settings.register(rclmod.modName, 'activeTheme', {
     name: 'active-theme',
-    scope:'world',
+    scope:'client',
     type: Object,
     default: activeTheme,
     config: false,
