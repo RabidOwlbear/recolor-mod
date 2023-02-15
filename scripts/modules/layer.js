@@ -24,7 +24,7 @@ export const recolorControls = (controls) => {
         onClick: () => {
           new Dialog({
             title: 'Test Dialog',
-            content: `<p>This will delete any saved themes and rever to defaul;t settings</p>
+            content: `<p>This will delete any saved themes and revert to default settings</p>
             <p>Are your sure?</p>`,
             buttons: {
               one: {
@@ -53,7 +53,9 @@ export function registerLayers() {
 
 export function releaseLayer() {
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
+
+    if (e.key === 'Escape' && canvas.recolor._active) {
+
       canvas.recolor._active = false;
       window.dispatchEvent(
         new KeyboardEvent('keydown', {

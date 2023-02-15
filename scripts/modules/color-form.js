@@ -17,7 +17,7 @@ export const registerColorForm = async function () {
     async getData() {
       let active = await game.settings.get(rclmod.modName, 'activeTheme');
       let themes = await game.settings.get(rclmod.modName, 'themes');
-      // console.log('active',active.colors, Object.keys(themes));
+      console.log('active',active.colors, Object.keys(themes));
       const keys = Object.keys(themes);
       return {
         activeName: active.name,
@@ -167,7 +167,7 @@ export const registerColorForm = async function () {
         const input = document.createElement('input');
         const form = this;
         input.type = 'file';
-        input.addEventListener('change', async function (e) {
+        input.addEventListener('click', async function (e) {
           let file = this.files[0];
           if (file.type != 'application/json') {
             ui.notifications.warn('Please select a valid JSON file.');
