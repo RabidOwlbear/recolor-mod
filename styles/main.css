@@ -1,113 +1,274 @@
+:root {
+  --color-header-color: transparent;
+  --sidebar-color:rgba(46, 0, 51, 0.718);
+  --sidebar-bg-c: "";
+  --sidebar-bg-b: "";
+  --sidebar-bg-a: "";
+  --sidebar-bg-url: "";
+  --scene-display-height: 100px;
+}
+
 * {
   margin: 0;
 }
-:root {
-  --main-color: '';
-  --bright-color: '';
-  --dark-color: '';
-  --darkAlt-color: '';
-  --glow-color: '';
-  --sidebar-color: '';
-  --pause-color: '';
-  --header-color: '';
-  --flicker: ;
-  --pause-glow: ;
-  --font-family: ;
-  --sidebar-color:rgba(46, 0, 51, 0.718);
-  --color-header-color: ;
-  
-}
-:root {
 
-  scrollbar-color:  var(-sidebar-color) #111;
-
+.scenes-sidebar {
+  --sidebar-scene-height: var(--scene-display-height) ;
 }
-::-webkit-scrollbar-thumb {
+
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 3px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 30px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 3px #2ba805;
+  }
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 13px #fff, 0 0 16px var(--pause-color), 0 0 18px var(--pause-color), 0 0 20px var(--pause-color), 0 0 35px var(--pause-color), 0 0 40px var(--pause-color);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px var(--pause-color), 0 0 80px var(--pause-color), 0 0 90px var(--pause-color), 0 0 100px var(--pause-color), 0 0 150px var(--pause-color);
+  }
+  0% {
+    /* Smaller blur radius */
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px var(--pause-color), 0 0 45px var(--pause-color), 0 0 55px var(--pause-color), 0 0 70px var(--pause-color), 0 0 80px var(--pause-color);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* color settings window */
+.app.colorSettings form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.app.colorSettings .window-content {
+  padding: 0;
+}
+.app.colorSettings .header {
+  height: 20px;
+  color: var(--color-text-light-1);
+  background-color: var(--tab-color);
+}
+.app.colorSettings .footer {
+  height: 35px;
+  width: 100%;
+  background-color: var(--tab-color);
+  color: var(--color-text-light-1);
+  display: flex;
+  justify-content: space-evenly;
+}
+.app.colorSettings .footer button,
+.app.colorSettings .footer input {
+  color: var(--color-text-light-1);
+}
+.app.colorSettings .footer #apply-theme {
+  width: 50%;
+}
+.app.colorSettings .footer #save-theme {
+  width: 150px;
+}
+.app.colorSettings .footer .save-control {
+  width: 50%;
+  align-items: center;
+}
+.app.colorSettings .theme-name button {
+  border: none;
+  height: 26px;
+  width: 26px;
+}
+.app.colorSettings .tab {
+  flex: 1;
+}
+.app.colorSettings .tab-content {
+  display: flex;
+  flex: 1;
+}
+.app.colorSettings .sheet-tabs {
+  display: flex;
+  height: 100%;
+}
+.app.colorSettings .nav-tab {
+  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.5490196078);
+  color: var(--color-text-light-4);
+  text-align: center;
+  flex: 1;
+}
+.app.colorSettings .nav-tab.active {
+  color: var(--color-text-light-1);
+  background-color: var(--tab-color-active);
+  box-shadow: none;
+}
+.app.colorSettings #submit-btn {
+  grid-column: 1/span 2;
+}
+.app.colorSettings .theme-select {
+  display: flex;
+  margin-left: 0.3em;
+}
+.app.colorSettings .theme-select select {
+  width: 50%;
+}
+.app.colorSettings .delete-theme-btn {
+  color: var(--color-bg-btn-minor-active);
+  font-size: 1.4em;
+  margin-left: 0.3em;
+}
+.app.colorSettings .theme-name-input-cont {
+  display: flex;
+}
+.app.colorSettings #color-grid {
+  padding: 0.5rem;
+}
+.app.colorSettings #color-grid label {
+  font-size: small;
+}
+.app.colorSettings .grid-item {
+  margin-bottom: 0.3em;
+  display: flex;
+  align-items: center;
+}
+.app.colorSettings #color-grid.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.app.colorSettings .col-pick {
+  height: 2em;
+  width: 2em;
+  border: none;
+  background-color: transparent;
+}
+.app.colorSettings input.col-pick:hover {
+  cursor: pointer;
+  height: 2em;
+  width: 2em;
+  border: none;
+  background-color: var(--color-border-highlight);
+}
+.app.colorSettings a.colorclicker,
+.app.colorSettings input.opacity-inp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.app.colorSettings input.opacity-inp {
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.5019607843);
+}
+.app.colorSettings .color-cell {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 0.3rem;
+  border: 2px solid var(--color-text-dark-2);
+  margin-right: 0.3rem;
+}
+.app.colorSettings .wide-cell {
+  width: 125px;
+}
+.app.colorSettings .sidebar-content {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 30%;
+}
+.app.colorSettings .sidebar-content .color-panel {
+  padding: 0.3em;
+}
+.app.colorSettings .sidebar-content .preview {
+  height: 100%;
+  background-color: var(--color-border-dark-3);
+  background: var(--sidebar-bg-url) repeat, linear-gradient(0deg, var(--sidebar-bg-c) 0%, var(--sidebar-bg-b) 46%, var(--sidebar-bg-a) 100%), var(--sidebar-bg-url) repeat;
+  background-color: var(--color-border-dark-3);
+}
+.app.colorSettings .sidebar-content .sidebar-bg-select-cont select {
+  margin-right: 0.2em;
+}
+.app.colorSettings .sidebar-content .logo-preview {
+  height: 100px;
+  width: 200px;
+  display: grid;
+  place-items: center;
+  background-color: #555;
+}
+.app.colorSettings .sidebar-content .logo-preview .image {
+  height: 50px;
+  width: 100px;
+  background: url("../assets/icon/fvtt.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.app.colorSettings .sidebar-content .logo-cont .grid-item {
+  padding-left: 0.3em;
+  justify-content: space-between;
+}
+
+#sidebar.recolor {
   background-color: var(--sidebar-color);
+  /* background-image: url() !important; */
 }
-#sidebar-tabs>.item.active {
+
+#sidebar-tabs > .item.active {
   border: 1px solid var(--color-shadow-primary) !important;
   box-shadow: 0 0 6px inset var(--color-shadow-highlight) !important;
+}
+
+.sidebar-popout,
+#sidebar.app {
+  /* background: url('../image/bg/sidebar-10.png') repeat; */
+  /* background: var(--sidebar-color); */
+  background: var(--sidebar-bg-url) repeat, linear-gradient(0deg, var(--sidebar-bg-c) 0%, var(--sidebar-bg-b) 46%, var(--sidebar-bg-a) 100%), var(--sidebar-bg-url) repeat;
+  background-color: var(--sidebar-color);
+}
+
+.sidebar-popout li.compendium,
+#sidebar.app li.compendium {
+  background-color: var(--trans-dark-bg);
+}
+
+.window-app .window-header {
+  background-color: var(--color-header-color);
+}
+
+:root {
+  scrollbar-color: var(--scrollbar-color) #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--sidebar-color);
 }
 
 .tabs .item.active {
   text-shadow: 0 0 10px var(--color-shadow-primary) !important;
 }
 
-#sidebar {
-  background-color: var(--sidebar-color);
-  /* background-image: url() !important; */
+.sheet.journal-entry .journal-entry-content {
+  background: transparent;
+  background-color: var(--color-bg-option);
 }
 
-/* color settings window */
-
-.theme-name button{
-  border: none;
-  height: 26px;
-  width: 26px;
+.window-app .window-content {
+  background: transparent;
+  background-color: var(--color-bg-option);
 }
 
-#colorSettings .footer{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-#colorSettings .footer .grid-item{
-  margin-bottom: .3em;
-}
-#colorSettings #submit-btn{
-  grid-column: 1 / span 2;
-}
-#colorSettings .theme-select{
-  display: flex;
-  flex-direction: column;
-}
-.theme-name-input-cont {
-  display: flex;
-}
-
-#colorSettings form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#color-grid.grid-container {
-  display: grid;
-  grid-template-columns: 1fr  1fr  1fr;
-}
-#color-grid label{
-  font-size: small;
-}
-#color-grid .grid-item{
-  margin-bottom: .3em;
-}
-.window-header {
-  background-color: var(--color-header-color);
-}
-
-
-@keyframes flicker {
-
-  0%,
-  18%,
-  22%,
-  25%,
-  53%,
-  57%,
-  100% {
-      text-shadow:
-          0 0 4px #fff,
-          0 0 11px #fff,
-          0 0 13px #fff,
-          0 0 16px var(--pause-color),
-          0 0 18px var(--pause-color),
-          0 0 20px var(--pause-color),
-          0 0 35px var(--pause-color),
-          0 0 40px var(--pause-color);
-  }
-
-  20%,
-  24%,
-  55% {
-      text-shadow: none;
-  }
-}
+/*# sourceMappingURL=main.css.map */

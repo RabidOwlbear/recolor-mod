@@ -1,0 +1,97 @@
+<form>
+  <section class='header'>
+    <div class='sheet-tabs' data-group='primary'>
+      <a class='nav-tab' data-tab='themes'>{{localize 'RORM.tabs.themes'}} </a>
+      <a class='nav-tab' data-tab='sidebar'>{{localize 'RORM.tabs.sidebar'}} </a>
+    </div>
+  </section>
+
+  <section class='tab-content' id='tab-content'>
+    <div class='tab themes' data-group='primary' data-tab='themes'>
+      <div id='color-grid' class='grid-container'>
+        {{#each colors}}
+          <div class='grid-item'>
+            <div class='color-cell theme-color' id='{{tag}}' name='{{tag}}' title='{{label}}' data-color='{{value}}'>
+              <input type='color' name='' class='hiddenpicker hidden' value='{{base}}' data-opacity="{{opacity}}"/>
+              <input type='number' class='opacity-inp hidden' step='0.1' min='0' max='1' value='1' />
+              <a class='colorclicker' style='background-color: {{value}};'></a>
+            </div>
+            <label for='{{tag}}'>
+              {{label}}
+            </label>
+          </div>
+        {{/each}}
+      </div>
+      <div class='grid-item theme-select'>
+        
+        <select name='theme-select' id='theme-select' class='grid-item form-data' title='Theme Select'>
+          <option value='FVTT Default'>{{localize "RORM.theme.selectTheme"}}</option>
+          {{#each themes as |theme idx|}}
+            <option value='{{theme.name}}'>{{theme.name}}</option>
+          {{/each}}
+        </select>
+        <a  class="delete-theme-btn hidden">
+          <i class="fa-solid fa-delete-left"></i>
+        </a>
+      </div>
+    </div>
+    <div class='tab sidebar' data-group='primary' data-tab='sidebar'>
+      <div class='sidebar-content'>
+        <div class='color-panel'>
+          <div class="sidebar-options">
+            <div class='grid-item'>
+              <div class='color-cell wide-cell' id='--sidebar-color' name='--sidebar-color' title='Sidebar Color' data-color='{{sidebarBgColor.value}}'>
+                <input type='color' class='hiddenpicker hidden' value='{{sidebarBgColor.base}}' data-opacity="{{sidebarBgColor.opacity}}"/>
+                <input type='number' class='opacity-inp hidden' step='0.1' min='0' max='1' value='1' />
+                <a class='colorclicker' style='background-color: {{sidebarBgColor.value}};'></a>
+              </div>
+              <label for='--sidebar-color'>Sidebar Color</label>
+            </div>
+            <div class='title'>{{localize "RORM.theme.sidebarGradColors"}}</div>
+            {{#each sidebarColors}}
+              <div class='grid-item'>
+                <div class='color-cell wide-cell sb-grad' id='{{id}}' name='{{tag}}' title='{{label}}' data-color='{{value}}'>
+                  <input type='color' class='hiddenpicker hidden' value='{{base}}' data-opacity="{{opacity}}"/>
+                  <input type='number' class='opacity-inp hidden' step='0.1' min='0' max='1' value='1' />
+                  <a class='colorclicker' style='background-color: {{value}};'></a>
+                </div>
+                <label for='{{tag}}'>
+                {{localize "RORM.theme.sidebarGradColor"}} {{label}}
+                </label>
+              </div>
+            {{/each}}
+            <div class="sidebar-bg-select-cont fx">
+              <select name="" id="sidebar-bg-select" value="{{sidebarBgImg}}">
+                {{#each sidebarBackgrounds}}
+                  <option value="{{img}}" {{#if selected}}selected{{/if}}> {{label}} </option>
+                {{/each}}
+              </select>
+              <label for="sidebar-bg-select">{{localize "RORM.theme.sidebarBgImg"}}</label>
+            </div>
+          </div>
+          <div class="logo-cont">
+            <h3>{{localize "RORM.theme.logo"}}</h3>
+            <div class="grid-item">
+              <select  id="logo-select">
+                {{#each logoOptions}}
+                <option value="{{value}}">{{label}}</option>
+                {{/each}}
+              </select>
+              <div class="logo-preview">
+                <div class="image"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='preview'></div>
+      </div>
+    </div>
+  </section>
+  <section class='footer'>
+    <button id='apply-theme'>{{localize 'RORM.theme.applyTheme'}}</button>
+    <div class="save-control hidden" id="save-control">
+      <input type="text" id="theme-name" value="{{activeName}}">
+      <button id='save-theme'>{{localize "RORM.theme.saveTheme"}}</button>
+      </div>
+  </section>
+</form>

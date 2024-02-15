@@ -1,0 +1,7 @@
+* {
+  margin: 0;
+}
+// shrink scene display
+.scenes-sidebar {
+  --sidebar-scene-height: var(--scene-display-height)
+}

@@ -1,0 +1,27 @@
+// window header
+.window-app .window-header{
+  background-color: var(--color-header-color);
+}
+// scrollbar
+:root {
+
+  scrollbar-color:  var(--scrollbar-color) #111;
+
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--sidebar-color);
+}
+
+
+.tabs .item.active {
+  text-shadow: 0 0 10px var(--color-shadow-primary) !important;
+}
+
+.sheet.journal-entry .journal-entry-content{
+  background: transparent;
+  background-color:  var(--color-bg-option);
+}
+.window-app .window-content{
+  background: transparent;
+  background-color:  var(--color-bg-option);
+}

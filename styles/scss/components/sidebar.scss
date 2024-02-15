@@ -1,0 +1,30 @@
+#sidebar.recolor{
+  background-color: var(--sidebar-color);
+  /* background-image: url() !important; */
+}
+
+#sidebar-tabs>.item.active {
+  border: 1px solid var(--color-shadow-primary) !important;
+  box-shadow: 0 0 6px inset var(--color-shadow-highlight) !important;
+}
+
+// .journal-sidebar .journalentry {
+//   // background-color: var(--sidebar-bg-b);
+// }
+.sidebar-popout,
+#sidebar.app {
+/* background: url('../image/bg/sidebar-10.png') repeat; */
+/* background: var(--sidebar-color); */
+background:  var(--sidebar-bg-url)  repeat, linear-gradient(
+    0deg,
+    var(--sidebar-bg-c) 0%,
+    var(--sidebar-bg-b) 46%,
+    var(--sidebar-bg-a) 100%
+  ),
+ var(--sidebar-bg-url) repeat;
+background-color: var(--sidebar-color);
+}
+.sidebar-popout li.compendium,
+#sidebar.app li.compendium{
+  background-color: var(--trans-dark-bg);
+}

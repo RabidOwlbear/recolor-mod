@@ -2,7 +2,7 @@
   <div id="color-grid" class="grid-container">
         {{#each colors}}
       <div class="grid-item">
-        <input type="color" name="{{tag}}" id="{{tag}}" value="{{value}}" class="col-pick form-data">
+        <input type="color" name="{{tag}}" id="{{tag}}" value="{{value}}" title="{{label}}" class="col-pick form-data">
         <label for="{{tag}}">
           {{label}}
         </label>
@@ -12,17 +12,17 @@
   <div class="footer">
     <div class="grid-item theme-select">
       <label for="theme-select">Select Theme:</label>
-      <select name="theme-select" id="theme-select" class="grid-item form-data">
+      <select name="theme-select" id="theme-select" class="grid-item form-data" title="Theme Select">
         <option value="none">Select Theme</option>
-        {{#each theme}}
-        <option value="{{name}}">{{name}}</option>
+        {{#each themes as |theme idx|}}
+        <option value="{{theme.name}}">{{theme.name}}</option>
         {{/each}}
       </select>
     </div>
     <div class="theme-name grid-item">
       <label for="Theme-name">Theme Name:</label>
       <div class="theme-name-input-cont">
-        <input id="theme-name" type="text" name="themeName"placeholder="Enter theme name." value = "{{activeName}}" class="form-data">
+        <input id="theme-name" type="text" title="{{activeName}}" name="themeName"placeholder="Enter theme name." value = "{{activeName}}" class="form-data">
         <button type="button" value="save" id="save-theme-btn" title="Save theme Preset">
           <i class="fas fa-save"></i>
         </button>
@@ -37,7 +37,7 @@
         </button>
       </div>
     </div>
-    <button id="submit-btn" type="submit" class="grid-item" value="Submit">save</button>
+    <button id="submit-btn"  class="grid-item" value="Submit">save</button>
   </div>
 </form>
 

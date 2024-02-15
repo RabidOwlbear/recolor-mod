@@ -1,38 +1,45 @@
 // import {themes} from "./modules/themes.js"
 
 export const registerSettings = async function () {
-
   await game.settings.register(rclmod.modName, 'recolor', {
     name: 'Recolor',
     hint: 'Recolor Foundry',
-    scope: 'world',
+    scope: 'client',
     type: Boolean,
     default: true,
     config: true,
     requiresReload: true,
     onChange: async () => {
-      window.location.reload()
+      window.location.reload();
     }
   });
-
-  
-  
+  await game.settings.register(rclmod.modName, 'shrinkScene', {
+    name: 'Shrink Scene Display',
+    hint: 'Reduces the display height of scenes on the sidebar.',
+    scope: 'client',
+    type: Boolean,
+    default: true,
+    config: true,
+    requiresReload: true,
+    onChange: async () => { 
+      window.location.reload();
+    }
+  });
 };
-export const registerThemes = async (themes, activeTheme)=>{
+export const registerThemes = async (themes, activeTheme) => {
   await game.settings.register(rclmod.modName, 'themes', {
     name: 'recolor-themes',
-    scope:'world',
+    scope: 'client',
     type: Array,
     default: themes,
-    config: false,
-  })
+    config: false
+  });
 
   await game.settings.register(rclmod.modName, 'activeTheme', {
     name: 'active-theme',
-    scope:'world',
+    scope: 'client',
     type: Object,
     default: activeTheme,
-    config: false,
-  })
-    
-}
+    config: false
+  });
+};

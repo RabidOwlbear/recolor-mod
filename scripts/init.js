@@ -23,10 +23,14 @@ Hooks.on('init', async () => {
   registerRecolor();
   await registerColorForm();
   registerLayers();
-  releaseLayer()
+  releaseLayer();
+
+  // document.documentElement.style.setProperty('--scene-display-height', '50px');
 });
 Hooks.on('ready', async () => {
   rclmod.recolor();
+  rclmod.resizeSceneDisplay();
+  // document.documentElement.style.setProperty('--scene-display-height', '50px');
 });
 
 Hooks.on('getSceneControlButtons', recolorControls);

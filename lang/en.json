@@ -1,0 +1,18 @@
+{
+  "RORM.tabs.themes": "Themes",
+  "RORM.tabs.sidebar": "Sidebar",
+  "RORM.theme.saveTheme": "Save Theme",
+  "RORM.theme.applyTheme": "Apply Theme",
+  "RORM.theme.selectTheme": "Select Theme",
+  "RORM.theme.sidebarBgImg": "Sidebar Background Image",
+  "RORM.theme.sidebarGradColor": "Sidebar Gradient Color",
+  "RORM.theme.sidebarGradColors": "Sidebar Gradient Colors",
+  "RORM.theme.deleteThemeTitle": "Delete Theme",
+  "RORM.theme.deleteThemeDesc": "Are you sure you want to delete this theme?",
+  "RORM.theme.close": "Close",
+  "RORM.theme.logo": "Logo",
+  "RORM.theme.changeTheme":"Change Theme",
+  "RORM.theme.setSavedActive":"Would you like to change to saved theme?",
+  "RORM.warn.nameTaken":"That name is already in use, please select another."
+  
+}

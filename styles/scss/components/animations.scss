@@ -1,0 +1,79 @@
+// flicker anim
+@keyframes glowing {
+  0% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+  }
+
+  50% {
+      background-color: #49e819;
+      box-shadow: 0 0 30px #49e819;
+  }
+
+  100% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+  }
+}
+
+@keyframes flicker {
+
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+      text-shadow:
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 13px #fff,
+          0 0 16px var(--pause-color),
+          0 0 18px var(--pause-color),
+          0 0 20px var(--pause-color),
+          0 0 35px var(--pause-color),
+          0 0 40px var(--pause-color);
+  }
+
+  20%,
+  24%,
+  55% {
+      text-shadow: none;
+  }
+}
+
+@keyframes pulsate {
+  100% {
+      /* Larger blur radius */
+      text-shadow:
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 19px #fff,
+          0 0 40px var(--pause-color),
+          0 0 80px var(--pause-color),
+          0 0 90px var(--pause-color),
+          0 0 100px var(--pause-color),
+          0 0 150px var(--pause-color);
+  }
+
+  0% {
+      /* Smaller blur radius */
+      text-shadow:
+          0 0 2px #fff,
+          0 0 4px #fff,
+          0 0 6px #fff,
+          0 0 10px var(--pause-color),
+          0 0 45px var(--pause-color),
+          0 0 55px var(--pause-color),
+          0 0 70px var(--pause-color),
+          0 0 80px var(--pause-color);
+  }
+}
+@keyframes rotation {
+  from { 
+      transform: rotate(0deg); 
+  } to { 
+      transform: rotate(360deg); 
+  }
+}
