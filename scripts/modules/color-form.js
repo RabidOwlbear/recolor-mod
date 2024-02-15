@@ -53,7 +53,7 @@ export const registerColorForm = async function () {
         baseApplication: 'colorSettings',
         id: 'colorSettings',
         template: 'modules/recolor-mod/templates/recolor-settings.hbs',
-        tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.tab-content', initial: 'sidebar' }],
+        tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.tab-content', initial: 'themes' }],
         height: 760,
         width: 700
       });
