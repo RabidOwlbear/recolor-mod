@@ -1,10 +1,10 @@
 :root {
   --color-header-color: transparent;
-  --sidebar-color:rgba(46, 0, 51, 0.718);
+  --sidebar-color:"";
   --sidebar-bg-c: "";
   --sidebar-bg-b: "";
   --sidebar-bg-a: "";
-  --sidebar-bg-url: "";
+  --sidebar-bg-url: url(../assets/bg/denim075.png);
   --scene-display-height: 100px;
 }
 

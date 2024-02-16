@@ -1,5 +1,6 @@
 export const recolorControls = (controls) => {
-  controls.push({
+  let global = game.settings.get('recolor-mod', 'forceGlobal');
+  const controlObj = {
     activeTool: 'recolor',
     icon: 'fas fa-palette',
     layer: 'recolor',
@@ -25,7 +26,7 @@ export const recolorControls = (controls) => {
           new Dialog({
             title: 'Test Dialog',
             content: `<p>This will delete any saved themes and revert to default settings</p>
-            <p>Are your sure?</p>`,
+          <p>Are your sure?</p>`,
             buttons: {
               one: {
                 icon: '<i class="fas fa-check"></i>',
@@ -39,12 +40,14 @@ export const recolorControls = (controls) => {
               }
             }
           }).render(true);
-          
         }
       }
     ],
     visible: true
-  });
+  };
+  if ((!global || game.user.isGM)) {
+    controls.push(controlObj);
+  }
 };
 
 export function registerLayers() {
@@ -53,9 +56,7 @@ export function registerLayers() {
 
 export function releaseLayer() {
   document.addEventListener('keydown', function (e) {
-
     if (e.key === 'Escape' && canvas.recolor._active) {
-
       canvas.recolor._active = false;
       window.dispatchEvent(
         new KeyboardEvent('keydown', {

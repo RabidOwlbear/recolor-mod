@@ -59,6 +59,7 @@ export const registerColorForm = async function () {
       });
     }
     async getData() {
+      this.forceGlobal = await game.settings.get(rclmod.modName, 'forceGlobal');
       let active = deepClone(await game.settings.get(rclmod.modName, 'activeTheme'));
       this.activeTheme = active;
       let themes = deepClone(await game.settings.get(rclmod.modName, 'themes'));
@@ -184,6 +185,9 @@ export const registerColorForm = async function () {
           }
         }).render(true);
       });
+    }
+    _getThemeSetting(){
+      return this.forceGlobal ? 'globalTheme' : 'activeTheme';
     }
     _prepareBgImgData(theme) {
       let data = deepClone(this.sidebarBackgrounds).map((i) => {
@@ -319,7 +323,8 @@ export const registerColorForm = async function () {
     async _applyTheme(name) {
       // const theme = await this._getTheme(name);
       const theme = this._getFormData();
-      await game.settings.set(rclmod.modName, 'activeTheme', theme);
+      // await game.settings.set(rclmod.modName, 'activeTheme', theme);
+      await game.settings.set(rclmod.modName, this._getThemeSetting() , theme);
       rclmod.recolor(theme);
       this.render(true);
     }
@@ -444,7 +449,8 @@ export const registerColorForm = async function () {
           }
         }
       }).render(true);
-      await game.settings.set(rclmod.modName, 'activeTheme', data);
+      // await game.settings.set(rclmod.modName, 'activeTheme', data);
+      await game.settings.set(rclmod.modName, this._getThemeSetting() , data);
       // this.render();
     }
     async _deleteTheme(name) {

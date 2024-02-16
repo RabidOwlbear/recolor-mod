@@ -19,18 +19,17 @@ Hooks.on('init', async () => {
 
   await registerSettings();
   await registerThemes(defaultThemes, defaultTheme);
-
   registerRecolor();
   await registerColorForm();
   registerLayers();
   releaseLayer();
-
-  // document.documentElement.style.setProperty('--scene-display-height', '50px');
 });
 Hooks.on('ready', async () => {
-  rclmod.recolor();
+  const forceGlobal = await game.settings.get(rclmod.modName, 'forceGlobal');
+
+ 
   rclmod.resizeSceneDisplay();
-  // document.documentElement.style.setProperty('--scene-display-height', '50px');
+
 });
 
 Hooks.on('getSceneControlButtons', recolorControls);

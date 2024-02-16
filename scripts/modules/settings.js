@@ -1,12 +1,12 @@
 // import {themes} from "./modules/themes.js"
 
 export const registerSettings = async function () {
-  await game.settings.register(rclmod.modName, 'recolor', {
-    name: 'Recolor',
-    hint: 'Recolor Foundry',
-    scope: 'client',
+  await game.settings.register(rclmod.modName, 'forceGlobal', {
+    name: 'Use Global Theme',
+    hint: 'Use a single theme for all connected clients. Enabling this setting will disable custom themes for players.',
+    scope: 'world',
     type: Boolean,
-    default: true,
+    default: false,
     config: true,
     requiresReload: true,
     onChange: async () => {
@@ -38,6 +38,13 @@ export const registerThemes = async (themes, activeTheme) => {
   await game.settings.register(rclmod.modName, 'activeTheme', {
     name: 'active-theme',
     scope: 'client',
+    type: Object,
+    default: activeTheme,
+    config: false
+  });
+  await game.settings.register(rclmod.modName, 'globalTheme', {
+    name: 'active-theme',
+    scope: 'world',
     type: Object,
     default: activeTheme,
     config: false

@@ -1,6 +1,6 @@
 {
   "id": "recolor-mod",
-  "title": "Recolor Mod",
+  "title": "Rabid Owlbear's Recolor Mod",
   "description": "Recolor your world.",
   "authors": [
     {
@@ -9,7 +9,7 @@
       "flags": {}
     }
   ],
-  "version": "0.1.1",
+  "version": "0.1.3",
   "compatibility": {
     "minimum": "10",
     "verified": "11.315",
