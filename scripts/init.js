@@ -27,9 +27,8 @@ Hooks.on('init', async () => {
 Hooks.on('ready', async () => {
   const forceGlobal = await game.settings.get(rclmod.modName, 'forceGlobal');
 
- 
+  rclmod.recolor();
   rclmod.resizeSceneDisplay();
-
 });
 
 Hooks.on('getSceneControlButtons', recolorControls);
