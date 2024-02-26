@@ -1,69 +1,6 @@
 // colors
 :root {
-  // --main-color: '';
-  // --bright-color: '';
-  // --dark-color: '';
-  // --darkAlt-color: '';
-  // --glow-color: '';
-  // --sidebar-color: '';
-  // --pause-color: '';
-  // --header-color: '';
-  // --flicker: ;
-  // --pause-glow: ;
-  // --font-family: ;
   
-  // --color-header-color: ;
-  // foundry variables
-  // --color-text-light-highlight:#f0f0e0;
-  // --color-text-light-heading:#c9c7b8;
-  // --color-text-light-primary:#b5b3a4;
-  // --color-text-dark-primary:#191813;
-  // --color-text-dark-secondary:#4b4a44;
-  // --color-text-dark-header:#23221d;
-  // --color-text-dark-inactive:#7a7971;
-  // --color-text-hyperlink: #cf337b;
-  // --color-text-light-0:#ffffff;
-  // --color-text-light-1:#eeeeee;
-  // --color-text-light-2:#dddddd;
-  // --color-text-light-3:#cccccc;
-  // --color-text-light-4:#bbbbbb;
-  // --color-text-light-5:#aaaaaa;
-  // --color-text-light-6:#999999;
-  // --color-text-light-7:#888888;
-  // --color-text-dark-1:#111111;
-  // --color-text-dark-2:#222222;
-  // --color-text-dark-3:#444444;
-  // --color-text-dark-4:#555555;
-  // --color-text-dark-5:#666666;
-  // --color-text-dark-6:#777777;
-  // --color-border-light-1:#dddddd;
-  // --color-border-light-2:#999999;
-  // --color-border-dark-1:#111111;
-  // --color-border-dark-2:#222222;
-  // --color-border-dark-3:#333333;
-  // --color-border-dark-4:#444444;
-  // --color-border-dark-5:#666666;
-  // --color-shadow-primary:#fa1eb8;
-  // --color-shadow-highlight:#cf337b;
-  // --color-shadow-dark:#000000;
-  // --color-underline-inactive:#7a7971;
-  // --color-underline-active:#372764;
-  // --color-underline-header:#6b2780;
-  // --color-border-light-highlight:#d20074;
-  // --color-border-light-primary:#b5b3a4;
-  // --color-border-light-secondary:#c9c7b8;
-  // --color-border-light-tertiary:#7a7971;
-  // --color-border-dark:#000000;
-  // --color-border-dark-primary:#191813;
-  // --color-border-dark-secondary:#23221d;
-  // --color-border-dark-tertiary:#4b4a44;
-  // --color-border-highlight:#cf337b;
-  // --color-border-highlight-alt:#fa1eb8;
-  // --color-bg-btn-minor-inactive:#c9c7b8;
-  // --color-bg-btn-minor-active:#d20074;
-  // --color-bg-option:#dad8cc;
-  // --color-header-color: rgba(55, 0, 55, 0.5);
-  // --scene-display-height: 100px;//default:100px
   // theme variables
   
   // --scrollbar-color:#6b2780;
@@ -76,4 +13,15 @@
   // --sidebar-bg-url: '';
   --sidebar-bg-url: url(../assets/bg/denim075.png);
   --scene-display-height: 100px;
-} 
+//   --pause-color: '';
+//   --pause-glow: '';
+//   --pause-glow-alt: 0 0 40px var(--pause-color);
+//   --pause-anim: ''
+// } 
+// @font-face {
+//   font-family: 'still_time';
+//   src: url('../fonts/still-time-webfont.woff2') format('woff2'),
+//       url('../fonts/still-time-webfont.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+}

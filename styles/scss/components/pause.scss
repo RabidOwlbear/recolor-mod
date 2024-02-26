@@ -1,0 +1,29 @@
+/* pause */
+
+#pause.paused {
+  display: flex;
+  justify-content: center;
+}
+
+
+// #pause.paused img {
+//   top: -50px;
+//   left: auto;
+//   height: 200px;
+//   width: 200px;
+
+//   -webkit-animation: rotation 25s infinite linear;
+//   animation: rotation 25s infinite linear;
+// }
+#pause {
+  background: url('');
+}
+
+// #pause.paused h3,
+// #pause.paused figcaption {
+//   font-family: 'still_time';
+//   font-size: 6em;
+//   color: var(--pause-color);
+//   animation: var(--pause-anim);
+//   text-shadow: var(--pause-glow);
+// }

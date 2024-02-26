@@ -45,6 +45,7 @@ export const registerColorForm = async function () {
       this.activeTheme = null;
       this.sidebarBackgrounds = sidebarBackgrounds;
       this.logoOptions = logoOptions;
+      this.forceGlobalTheme = false;
     }
     static get defaultOptions() {
       return mergeObject(super.defaultOptions, {
@@ -59,7 +60,7 @@ export const registerColorForm = async function () {
       });
     }
     async getData() {
-      this.forceGlobal = await game.settings.get(rclmod.modName, 'forceGlobal');
+      this.forceGlobalTheme = await game.settings.get(rclmod.modName, 'forceGlobalTheme');
       let active = deepClone(await game.settings.get(rclmod.modName, 'activeTheme'));
       this.activeTheme = active;
       let themes = deepClone(await game.settings.get(rclmod.modName, 'themes'));
@@ -187,7 +188,7 @@ export const registerColorForm = async function () {
       });
     }
     _getThemeSetting(){
-      return this.forceGlobal ? 'globalTheme' : 'activeTheme';
+      return this.forceGlobalTheme ? 'globalTheme' : 'activeTheme';
     }
     _prepareBgImgData(theme) {
       let data = deepClone(this.sidebarBackgrounds).map((i) => {

@@ -1,4 +1,4 @@
-import { registerRecolor } from './modules/colors.js';
+import { registerRecolor } from './modules/color-util.js';
 import { registerLayers, releaseLayer, recolorControls } from './modules/layer.js';
 import { registerSettings, registerThemes } from './modules/settings.js';
 import { registerColorForm } from './modules/color-form.js';
@@ -25,8 +25,6 @@ Hooks.on('init', async () => {
   releaseLayer();
 });
 Hooks.on('ready', async () => {
-  const forceGlobal = await game.settings.get(rclmod.modName, 'forceGlobal');
-
   rclmod.recolor();
   rclmod.resizeSceneDisplay();
 });

@@ -1,5 +1,5 @@
 export const recolorControls = (controls) => {
-  let global = game.settings.get('recolor-mod', 'forceGlobal');
+  let global = game.settings.get('recolor-mod', 'forceGlobalTheme');
   const controlObj = {
     activeTool: 'recolor',
     icon: 'fas fa-palette',
