@@ -1,15 +1,14 @@
 export const registerRecolor = function () {
   rclmod.recolor = async (theme) => {
     let logoEl = document.querySelector('#logo');
-
+    const forceGlobalTheme = await game.settings.get(rclmod.modName, 'forceGlobalTheme');
+    const forceGlobalLogo = await game.settings.get(rclmod.modName, 'forceGlobalLogo');
+    let logoPath
     if (!theme) {
-      const forceGlobalTheme = await game.settings.get(rclmod.modName, 'forceGlobalTheme');
-      const forceGlobalLogo = await game.settings.get(rclmod.modName, 'forceGlobalLogo');
       const customLogo = await game.settings.get(rclmod.modName, 'customLogo');
       const active = forceGlobalTheme
         ? await game.settings.get(rclmod.modName, 'globalTheme')
         : await game.settings.get(rclmod.modName, 'activeTheme');
-      let logoPath
       for (let color of active.colors) {
         document.documentElement.style.setProperty(color.tag, color.value);
       }
